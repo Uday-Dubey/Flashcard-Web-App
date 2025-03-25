@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Overall Body Styles */
+:root {
+    --base-color: rgba(209, 163, 163, 0.641);
+    --heading-color: black;
+    --paragraph-color: rgba(40, 25, 10, 0.9);
+    --invert-value: 0;
+    --sidebar-color: rgba(250, 225, 210, 0.85);
+    --sidebar-highlight: rgba(240, 194, 175, 0.6);
+    --btn-color: rgba(220, 220, 220, 0.9);
+    --folder-color: rgba(250, 225, 210, 0.85);
+
+    /* transitions */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+}
+
+body.dark {
+    --base-color: rgba(0, 0, 0, 0.852);
+    --paragraph-color: rgba(230, 230, 230, 0.95);
+    --heading-color: blanchedalmond;
+    --invert-value: 1;
+    --sidebar-color: rgba(70, 80, 120, 0.85);
+    --sidebar-highlight: rgba(100, 110, 150, 0.9);
+    --folder-color: rgba(50, 90, 100, 0.85);
+    --btn-color: rgba(80, 60, 50, 0.85);
+
+    /* transitions */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--base-color);
+    color: var(--paragraph-color);
+    width: 100%;
+    font-family: 'poppins', sans-serif;
+    height: auto;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+/* Reusable Css */
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--tran-03);
+    opacity: 1;
+    white-space: nowrap;
+    color: var(--heading-color);
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    font-size: 20px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--heading-color);
+    transition: var(--tran-02);
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name {
+    font-weight: 600;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--heading-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 20px;
+}
+
+.sidebar.close header .toggle {
+    transform: translateY(-50%);
+}
+
+.sidebar .search-box {
+    background: var(--sidebar-color);
+    border-radius: 12px;
+    transition: var(--tran-05);
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: var(--sidebar-color);
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+
+.sidebar li a:hover {
+    background: var(--heading-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar .mode {
+    background: var(--sidebar-highlight);
+    position: relative;
+    border-radius: 12px;
+}
+
+.menu-bar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i {
+    position: absolute;
+    transition: var(--tran-03);
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun {
+    opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    display: flex;
+    right: 0;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transition: var(--tran-05);
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--heading-color);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-highlight);
+    transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+    left: 25px;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    /* Distance from bottom */
+    right: 30px;
+    /* Distance from right */
+    width: auto;
+    height: auto;
+    padding: 20px 15px;
+    background-color: var(--btn-color);
+    /* Red color */
+    /* color: white; */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#section1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 25px;
+    align-items: center;
+    /* height: auto; */
+    width: auto;
+    margin-left: 250px;
+    margin-right: 10px;
+    transition: var(--tran-05);
+}
+
+#section1 h1 {
+    color: var(--heading-color);
+}
+
+.sidebar.close~#section1 {
+    margin-left: 88px;
+}
+
+.folder {
+    width: 75%;
+    padding: 25px 20px;
+    color: var(--paragraph-color);
+    margin: 15px;
+    border-radius: 15px;
+    background-color: var(--folder-color);
+    border: 1px solid black;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-container {
+    display: flex;
+}
+
+.icon-container .folder-icon {
+    margin: 0 15px;
+    height: 20px;
+    width: 20px;
+    color: var(--paragraph-color);
+
+}
+
+.delete {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.edit {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.add-card {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.open {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Floating Button Styling */
+.floating-btn img {
+    margin: 0 4px;
+    filter: invert(var(--invert-value));
+}
+
+.floating-btn .btn-text {
+    margin: 0 10px;
+    color: var(--heading-color);
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    /* Scale effect */
+}

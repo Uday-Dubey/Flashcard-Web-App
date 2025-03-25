@@ -1,0 +1,69 @@
+extends base.pug
+
+block title 
+  title Services | FlashLearn
+block scripts
+  script(defer, src="../public/js/Services.js") 
+block styles
+  link(rel="stylesheet", href="../public/css/Services.css")
+
+block content
+  section#section1.hidden
+    h1 Services
+
+  section#section2.hidden
+    h1 What We Provide
+    .container1.hidden
+      .box
+        h2 Organized Learning
+        p Easily manage your studies with subject-based folders. Store flashcards neatly and access them anytime without unnecessary clutter. Stay organized and focus on what truly matters—your learning.
+        svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="24", height="24", color="#000000", fill="none")
+          path(d="M2 19V7.54902C2 6.10516 2 5.38322 2.24332 4.81647C2.5467 4.10985 3.10985 3.5467 3.81647 3.24332C4.38322 3 5.09805 3 6.54902 3H7.04311C7.64819 3 8.22075 3.27394 8.60041 3.74509L10.4175 6M10.4175 6H16C17.4001 6 18.1002 6 18.635 6.27248C19.1054 6.51217 19.4878 6.89462 19.7275 7.36502C20 7.8998 20 8.59987 20 10V11M10.4175 6H7", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+          path(d="M3.15802 15.5144L3.45643 14.7717C4.19029 12.9449 4.55723 12.0316 5.3224 11.5158C6.08757 11 7.07557 11 9.05157 11H17.1119C19.8004 11 21.1446 11 21.7422 11.8787C22.3397 12.7575 21.8405 14.0002 20.842 16.4856L20.5436 17.2283C19.8097 19.0551 19.4428 19.9684 18.6776 20.4842C17.9124 21 16.9244 21 14.9484 21H6.88812C4.19961 21 2.85535 21 2.25782 20.1213C1.66029 19.2425 2.15953 17.9998 3.15802 15.5144Z", stroke="currentColor", stroke-width="1.5", stroke-linejoin="round")
+
+      .box
+        h2 Interactive Flashcards
+        p Flip, edit, and customize flashcards with text, images, and links. Enhance your learning experience with dynamic content that makes memorization easier and more engaging every time you study.
+        svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="24", height="24", color="#000000", fill="none")
+          path(d="M16.5 17.5L18 15.75H16.1407C15.0928 15.75 14.5688 15.75 14.1267 15.5281C13.6845 15.3063 13.3938 14.8976 12.8125 14.0801L9.85413 9.91987C9.27285 9.10244 8.9822 8.69372 8.54002 8.47186C8.09783 8.25 7.57386 8.25 6.52593 8.25H6M16.5 6.5L18 8.25H16.1407C15.0928 8.25 14.5688 8.25 14.1267 8.47186C13.6845 8.69372 13.3938 9.10244 12.8125 9.91987M6 15.75H6.52593C7.57386 15.75 8.09783 15.75 8.54001 15.5281C8.9822 15.3063 9.27285 14.8976 9.85413 14.0801", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+          path(d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z", stroke="currentColor", stroke-width="1.5")
+
+      .box
+        h2 Smart Study Techniques
+        p Use active recall and spaced repetition to reinforce concepts. Review flashcards at optimized intervals, helping you retain knowledge longer and study more effectively without wasted effort.
+        svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="24", height="24", color="#000000", fill="none")
+          path(d="M4.22222 21.9948V18.4451C4.22222 17.1737 3.88927 16.5128 3.23482 15.4078C2.4503 14.0833 2 12.5375 2 10.8866C2 5.97866 5.97969 2 10.8889 2C15.7981 2 19.7778 5.97866 19.7778 10.8866C19.7778 11.4663 19.7778 11.7562 19.802 11.9187C19.8598 12.3072 20.0411 12.6414 20.2194 12.9873L22 16.4407L20.6006 17.1402C20.195 17.3429 19.9923 17.4443 19.851 17.6314C19.7097 17.8184 19.67 18.0296 19.5904 18.4519L19.5826 18.4931C19.4004 19.4606 19.1993 20.5286 18.6329 21.2024C18.4329 21.4403 18.1853 21.6336 17.9059 21.7699C17.4447 21.9948 16.8777 21.9948 15.7437 21.9948C15.219 21.9948 14.6928 22.0069 14.1682 21.9942C12.9247 21.9639 12 20.9184 12 19.7044", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+          path(d="M14.388 10.5315C13.9617 10.5315 13.5729 10.3702 13.2784 10.1048M14.388 10.5315C14.388 11.6774 13.7241 12.7658 12.4461 12.7658C11.1681 12.7658 10.5043 13.8541 10.5043 15M14.388 10.5315C16.5373 10.5315 16.5373 7.18017 14.388 7.18017C14.1927 7.18017 14.0053 7.21403 13.8312 7.27624C13.9362 4.77819 10.3349 4.1 9.51923 6.44018M10.5043 8.29729C10.5043 7.52323 10.1133 6.8411 9.51923 6.44018M9.51923 6.44018C7.66742 5.19034 5.19883 7.4331 6.37324 9.43277C4.40226 9.72827 4.61299 12.7658 6.6205 12.7658C7.18344 12.7658 7.68111 12.4844 7.98234 12.0538", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+
+    .container2.hidden
+      .box
+        h2 Customizable Experience
+        p Personalize your flashcards with themes, fonts, and colors. Create a study environment that matches your style and keeps you motivated. Make learning both productive and visually engaging.
+        svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="24", height="24", color="#000000", fill="none")
+          path(d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C12.8417 22 14 22.1163 14 21C14 20.391 13.6832 19.9212 13.3686 19.4544C12.9082 18.7715 12.4523 18.0953 13 17C13.6667 15.6667 14.7778 15.6667 16.4815 15.6667C17.3334 15.6667 18.3334 15.6667 19.5 15.5C21.601 15.1999 22 13.9084 22 12Z", stroke="currentColor", stroke-width="1.5")
+          path(d="M7 15.002L7.00868 14.9996", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+          circle(cx="9.5", cy="8.5", r="1.5", stroke="currentColor", stroke-width="1.5")
+          circle(cx="16.5", cy="9.5", r="1.5", stroke="currentColor", stroke-width="1.5")
+
+      .box
+        h2 Access Anywhere
+        p Sync your flashcards across devices with cloud storage. Study on your laptop, phone, or tablet without losing progress. Your learning materials are always secure and accessible anytime, anywhere.
+        svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="24", height="24", color="#000000", fill="none")
+          path(d="M17.5 8V7.25L17.4982 7.25L17.5 8ZM6.52042 7.0227L6.59147 7.76933H6.59147L6.52042 7.0227ZM9.54998 8.59962C9.88114 8.84843 10.3513 8.78167 10.6001 8.45051C10.8489 8.11935 10.7822 7.64919 10.451 7.40038L9.54998 8.59962ZM19.555 15.6374C19.2087 15.8648 19.1123 16.3297 19.3397 16.676C19.567 17.0222 20.032 17.1186 20.3783 16.8913L19.555 15.6374ZM3.61477 16.6483C3.94943 16.8924 4.41859 16.819 4.66268 16.4843C4.90676 16.1497 4.83334 15.6805 4.49868 15.4364L3.61477 16.6483ZM16.2325 9.65862C16.0439 10.0274 16.1901 10.4793 16.5589 10.6678C16.9277 10.8563 17.3796 10.7102 17.5681 10.3414L16.2325 9.65862ZM12 2.75C14.6234 2.75 16.75 4.87665 16.75 7.5H18.25C18.25 4.04822 15.4518 1.25 12 1.25V2.75ZM17.5 8.75C19.5711 8.75 21.25 10.4289 21.25 12.5H22.75C22.75 9.60051 20.3995 7.25 17.5 7.25V8.75ZM17.4794 8.75005L17.5018 8.75L17.4982 7.25L17.4757 7.25006L17.4794 8.75005ZM16.75 7.5C16.75 7.64606 16.7434 7.79039 16.7306 7.93274L18.2245 8.06737C18.2414 7.88033 18.25 7.69107 18.25 7.5H16.75ZM2.75 12C2.75 9.79073 4.4363 7.97442 6.59147 7.76933L6.44937 6.27608C3.53166 6.55373 1.25 9.00996 1.25 12H2.75ZM6.59147 7.76933C6.72573 7.75655 6.86199 7.75 7 7.75V6.25C6.81447 6.25 6.63079 6.25881 6.44937 6.27608L6.59147 7.76933ZM7.26767 7.08694C7.47652 4.65738 9.51591 2.75 12 2.75V1.25C8.73056 1.25 6.04814 3.75986 5.77318 6.95847L7.26767 7.08694ZM7 7.75C7.95781 7.75 8.83967 8.06595 9.54998 8.59962L10.451 7.40038C9.48982 6.67823 8.29384 6.25 7 6.25V7.75ZM21.25 12.5C21.25 13.8114 20.5775 14.9661 19.555 15.6374L20.3783 16.8913C21.8052 15.9544 22.75 14.3377 22.75 12.5H21.25ZM4.49868 15.4364C3.43727 14.6623 2.75 13.4114 2.75 12H1.25C1.25 13.9109 2.18287 15.6039 3.61477 16.6483L4.49868 15.4364ZM16.7306 7.93273C16.675 8.55008 16.5013 9.13268 16.2325 9.65862L17.5681 10.3414C17.9225 9.64808 18.1513 8.8798 18.2245 8.06738L16.7306 7.93273Z", fill="currentColor")
+
+      .box
+        h2 Collaborative Learning
+        p Share flashcards with classmates, friends, or teachers. Work together, exchange knowledge, and make learning interactive. Studying in groups has never been easier or more effective than this.
+        svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="24", height="24", color="#000000", fill="none")
+          path(d="M15 8C15 9.65685 13.6569 11 12 11C10.3431 11 9 9.65685 9 8C9 6.34315 10.3431 5 12 5C13.6569 5 15 6.34315 15 8Z", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+          path(d="M16 4C17.6568 4 19 5.34315 19 7C19 8.22309 18.268 9.27523 17.2183 9.7423", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+          path(d="M13.7143 14H10.2857C7.91876 14 5.99998 15.9188 5.99998 18.2857C5.99998 19.2325 6.76749 20 7.71426 20H16.2857C17.2325 20 18 19.2325 18 18.2857C18 15.9188 16.0812 14 13.7143 14Z", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+          path(d="M17.7143 13C20.0812 13 22 14.9188 22 17.2857C22 18.2325 21.2325 19 20.2857 19", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+          path(d="M8 4C6.34315 4 5 5.34315 5 7C5 8.22309 5.73193 9.27523 6.78168 9.7423", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+          path(d="M3.71429 19C2.76751 19 2 18.2325 2 17.2857C2 14.9188 3.91878 13 6.28571 13", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+
+  section#section3.hidden
+    h1 Get Started Today!
+    span Join thousands of learners who are using Flash Learn to achieve their study goals faster.
+    span Sign up now and take control of your learning journey with a smarter, more effective approach!
+    span Start Learning Smarter – Try Flash Learn Today!

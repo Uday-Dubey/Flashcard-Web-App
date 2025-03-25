@@ -1,0 +1,70 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon", type="x-icon", href="../public/images/logo.png")
+    link(rel="stylesheet", href="../public/css/dashboard.css")
+    link(rel="stylesheet", href="../public/css/pop.css")
+    link(href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css", rel="stylesheet")
+    script(defer, src="../public/js/dashboard.js")
+    title Dashboard
+
+  body
+    nav.sidebar
+      header
+        .image-text
+          span.image
+            img(src="../public/images/logo.png", alt="")
+          .text.header-text
+            span.name FlashLearn
+            span.profession Flashcard App
+        i.bx.bx-chevron-right.toggle
+
+      .menu-bar
+        .menu
+          li.search-box
+            i.bx.bx-search.icon
+            input(type="search", placeholder="Search....")
+          ul.menu-links
+            li.nav-link
+              a(href="#")
+                i.bx.bx-home-alt.icon
+                span.text.nav-text Dashboard
+
+          li.mode
+            .moon-sun
+              i.bx.bx-moon.icon.moon
+              i.bx.bx-sun.icon.sun
+            span.mode-text.text Dark Mode
+            .toggle-switch
+              span.switch
+
+        .bottom-content
+          li
+            a(href="#")
+              i.bx.bx-log-out.icon.logoutbtn
+              span.text.nav-text.logoutbtn Logout
+
+    section#section1
+      h1 Your Subjects
+
+    button.floating-btn
+      img(src="../public/images/plus-sign-stroke-rounded.svg", alt="")
+      span.btn-text Add Subject
+
+  .popup-overlay
+    .popup-alert
+      .popup-header
+        .image-container
+        h3.popup-title Subject Name
+      .popup-content
+        p Enter the name of the subject you want to create below.
+        input.popup-input(type="text" placeholder="Enter your input")
+      .popup-actions
+        button.popup-button.confirm Confirm
+        button.popup-button.cancel Cancel
+
+
+    script(type="module", src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")
+    script(nomodule, src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")

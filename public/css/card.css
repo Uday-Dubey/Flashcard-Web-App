@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Overall Body Styles */
+:root {
+    --base-color: rgba(209, 163, 163, 0.641);
+    --heading-color: black;
+    --paragraph-color: rgba(40, 25, 10, 0.9);
+    --invert-value: 0;
+    --sidebar-color: rgba(250, 225, 210, 0.85);
+    --sidebar-highlight: rgba(240, 194, 175, 0.6);
+    --btn-color: rgba(220, 220, 220, 0.9);
+    --card-btn: rgba(220, 170, 140, 0.9);
+    --card-btn-hover: rgba(200, 140, 110, 0.9);
+    --card-btn-border: rgba(150, 110, 90, 0.5);
+    --card-btn-txt: #3a3a3a;
+    --image-container-text: blanchedalmond;
+    --folder-color: rgba(250, 225, 210, 0.85);
+
+    /* transitions */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+}
+
+body.dark {
+    --base-color: rgba(0, 0, 0, 0.852);
+    --paragraph-color: rgba(230, 230, 230, 0.95);
+    --heading-color: blanchedalmond;
+    --image-container-text: blanchedalmond;
+    --invert-value: 1;
+    --sidebar-color: rgba(70, 80, 120, 0.85);
+    --sidebar-highlight: rgba(100, 110, 150, 0.9);
+    --folder-color: rgba(50, 90, 100, 0.85);
+    --btn-color: rgba(80, 60, 50, 0.85);
+    --card-btn: rgba(80, 140, 160, 0.9);
+    --card-btn-hover: rgba(60, 110, 125, 0.9);
+    --card-btn-border: rgba(200, 230, 235, 0.5);
+    --card-btn-txt: #f5f5f5;
+
+    /* transitions */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--base-color);
+    color: var(--paragraph-color);
+    width: 100%;
+    font-family: 'poppins', sans-serif;
+    height: auto;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+/* Reusable Css */
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--tran-03);
+    opacity: 1;
+    white-space: nowrap;
+    color: var(--heading-color);
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    font-size: 20px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--heading-color);
+    transition: var(--tran-02);
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name {
+    font-weight: 600;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--heading-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 20px;
+}
+
+.sidebar.close header .toggle {
+    transform: translateY(-50%);
+}
+
+.sidebar .search-box {
+    background: var(--sidebar-color);
+    border-radius: 12px;
+    transition: var(--tran-05);
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: var(--sidebar-color);
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+
+.sidebar li a:hover {
+    background: var(--heading-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar .mode {
+    background: var(--sidebar-highlight);
+    position: relative;
+    border-radius: 12px;
+}
+
+.menu-bar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i {
+    position: absolute;
+    transition: var(--tran-03);
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun {
+    opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    display: flex;
+    right: 0;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transition: var(--tran-05);
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--heading-color);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-highlight);
+    transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+    left: 25px;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    /* Distance from bottom */
+    right: 30px;
+    /* Distance from right */
+    width: auto;
+    height: auto;
+    padding: 20px 15px;
+    background-color: var(--btn-color);
+    /* Red color */
+    /* color: white; */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Section Styling */
+#section1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 25px;
+    height: auto;
+    align-items: center;
+    /* height: auto; */
+    width: auto;
+    margin-left: 250px;
+    margin-right: 10px;
+    transition: var(--tran-05);
+}
+
+#section1 h1 {
+    color: var(--heading-color);
+}
+
+.sidebar.close~#section1 {
+    margin-left: 88px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+.card-container {
+    flex: 1 1 calc(33.33% - 40px);
+    max-width: 390px;
+    min-width: 290px;
+    height: 400px;
+    background-color: var(--folder-color);
+    border: 1px solid black;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--tran-04);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-container.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .text-container h1 {
+    color: var(--heading-color);
+}
+
+.card-back{
+display: flex;
+flex-direction: column;
+background-color: var(--folder-color);
+}
+
+.card-back p{
+    margin-top: auto;
+}
+
+.card {
+    perspective: 1000px;
+    height: 95%;
+    width: auto;
+}
+
+.image-container2 {
+    margin: 0;
+    padding: 0;
+    height: 30%;
+    width: 100%;
+    background: url(../images/questionback.jpg) center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container2 h1 {
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--image-container-text) !important;
+    z-index: 10;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.881);
+    /* Adds contrast */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 17px;
+    text-align: justify;
+    padding: 5px 15px;
+}
+
+.card-back .flip-btn{
+    width: auto;
+    min-width: 100px;
+}
+
+.flip-btn {
+    background-color: var(--card-btn);
+    color: var(--card-btn-txt);
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: 30%;
+    display: block;
+    border: 1px solid;
+    border-color: var(--card-btn-border);
+}
+
+.flip-btn:hover {
+    background-color: var(--card-btn-hover);
+}
+
+.icon-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.icon-container .card-icon {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 20px;
+    width: 20px;
+    color: var(--paragraph-color);
+
+}
+
+.delete {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.edit {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+
+/* Floating Button Styling */
+.floating-btn img {
+    margin: 0 4px;
+    filter: invert(var(--invert-value));
+}
+
+.floating-btn .btn-text {
+    margin: 0 10px;
+    color: var(--heading-color);
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    /* Scale effect */
+}

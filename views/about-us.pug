@@ -1,0 +1,47 @@
+//- about.pug
+extends base.pug
+
+block title 
+  title About Us | FlashLearn
+block scripts
+  script(defer, src="../public/js/About-Us.js") 
+block styles
+  link(rel="stylesheet", href="../public/css/About-Us.css")
+
+block content
+  section#section1.hidden
+    h1 About Us
+
+  section#section2.hidden
+    #container1
+      .part1
+        h1 Our Mission
+        p At Flash Learn, we believe that education should be accessible, engaging, and effective for everyone. Our mission is to empower learners by providing a structured, intuitive, and interactive platform that enhances memory retention and makes studying a more efficient process.
+        p We understand that traditional study methods can be overwhelming and time-consuming, often leading to ineffective learning and information loss. That’s why Flash Learn is designed to simplify the learning process using scientifically proven techniques such as active recall and spaced repetition.
+        h2 What drives us?
+        ul
+          li Making Learning Smarter – We want to help students, professionals, and lifelong learners retain information better and recall it faster using flashcards.
+          li Organized & Stress-Free Studying – With subject-based folders, we aim to eliminate clutter and provide a structured way to organize study materials.
+          li Enhancing Productivity – We strive to help learners maximize study efficiency so they can spend less time reviewing and more time mastering concepts.
+          li Accessible Learning for All – Our goal is to ensure that anyone, anywhere, can create and access their study materials without limitations.
+      .container
+        img(src="../public/images/Ourmission.jpg", alt="Our Mission", height="550", width="460")
+
+    #container2.hidden
+      .container2
+        img(src="../public/images/section2-2.jpg", alt="What We Offer", height="550", width="460")
+      .part2
+        h1 What We Offer
+        ul
+          li Organized Learning: Easily create folders based on subjects and store your flashcards accordingly.
+          li Active Recall &amp; Spaced Repetition: Enhance memory retention using scientifically proven learning techniques.
+          li User-Friendly Interface: A clean and simple design that makes creating, managing, and reviewing flashcards effortless.
+        h2 Why Choose Flash Learn?
+        ul
+          li Unlike traditional note-taking methods, flashcards help reinforce learning through repetition and recall.
+          li Our structured approach makes it easy to categorize and access information anytime, anywhere.
+          li Whether you’re studying for exams, interviews, or certifications, Flash Learn helps you stay organized and focused.
+
+  section#section3.hidden
+    h1 Join Us Today
+    p Start learning smarter and faster with Flash Learn. Sign up now and take control of your learning journey!

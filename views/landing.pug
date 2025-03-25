@@ -1,0 +1,135 @@
+extends base.pug
+
+block title 
+  title  FlashLearn
+block scripts
+  script(defer, src="../public/js/landing.js") 
+block styles
+  link(rel="stylesheet", href="../public/css/landing.css")
+
+block content
+  section#section1
+    video(src="../public/videos/Study.mp4", autoplay, loop, muted)
+    .wrapper
+      span.icon-close
+        ion-icon(name="close-outline")
+      .form-box.login
+        h2 Login
+        form(action="/api/auth/login", method="post")
+          .input-box
+            span.icon
+              ion-icon(name="mail-outline")
+            input(type="email", name="email", required)
+            label E-Mail
+          .input-box
+            span.icon
+              ion-icon(name="lock-closed-outline")
+            input(type="password", name="password", required)
+            label Password
+          .remember-forgot
+            label
+              input(type="checkbox")
+              | Remember Me
+            a(href="#") Forgot Password?
+          button.btn-submit(type="submit") Login
+          .login-register
+            p Don't have an account?
+              a.register-link(href="#") Register
+      .form-box.register
+        h2 Register
+        form(action="/api/auth/register", method="post" )
+          .input-box
+            span.icon
+              ion-icon(name="person-outline")
+            input(type="text", name="username", required)
+            label Username
+          .input-box
+            span.icon
+              ion-icon(name="mail-outline")
+            input(type="email", name="email", required)
+            label E-Mail
+          .input-box
+            span.icon
+              ion-icon(name="lock-closed-outline")
+            input(type="password", name="password", required)
+            label Password
+          .remember-forgot
+            label
+              input(type="checkbox")
+              | I agree to the terms and conditions
+          button.btn-submit(type="submit") Register
+          .login-register
+            p Already have an account?
+              a.login-link(href="#") Login
+    .main
+      span Flash Learn – Learn Smarter,
+        br
+        | Remember Faster
+      span Master Any Topic with Smart Flashcards.
+      span FlashMind makes studying easy and efficient. Whether you’re a student, professional,
+        br
+        | or lifelong learner, our intelligent flashcard system helps you retain information faster and recall it effortlessly.
+      .hero
+        button.btn-main Get Started
+
+  .separation
+
+  section#section2.hidden
+    .container
+      img(src="../public/images/Photo1 landing.png", alt="")
+    .p1
+      h1 Unlock the Power of Active Learning
+        br
+      p Traditional study methods can be overwhelming and ineffective. Flash Learn revolutionizes the way you learn by using spaced repetition, a scientifically proven technique that boosts long-term retention. Instead of cramming and forgetting, our smart flashcards ensure you review information at the perfect time, reinforcing concepts effortlessly. Whether you're studying for exams, preparing for certifications, or learning a new language, FlashMind helps you retain knowledge with less effort.
+
+  .separation
+
+  section#section3.hidden
+    .p2
+      h1 Designed for Every Learner
+        br
+      p Flash Learn is built for students, professionals, and curious minds alike. With an intuitive interface, easy-to-use customization tools, and AI-driven insights, you can personalize your learning experience to match your needs. Create decks for any subject, add images and notes, or explore a vast library of user-generated flashcards. Plus, with real-time progress tracking and achievement milestones, staying motivated has never been easier. Learning doesn’t have to be a struggle—FlashMind makes it engaging, efficient, and fun.
+    .container2
+      img(src="../public/images/photo2 Landing.png", alt="")
+
+  .separation
+
+  section#section4.hidden
+    h1 Frequently Asked Questions
+    .cards
+      .carditem.card
+        .cardques
+          | What is Flash Learn?
+          img(src="../public/images/plus-sign-stroke-rounded.svg", alt="", class="icon-ques")
+        .cardans
+          p Flash Learn is an intelligent flashcard-based learning platform designed to help you study smarter and remember faster. Whether you're preparing for exams, learning a new language, or mastering complex concepts, our AI-powered spaced repetition system ensures better retention with less effort.
+        .cardques
+          | How does Flash Learn work?
+          img(src="../public/images/plus-sign-stroke-rounded.svg", alt="", class="icon-ques")
+        .cardans
+          p Flash Learn uses spaced repetition to help you review information at optimal intervals, reinforcing your memory. Simply create or explore flashcard decks, test yourself, and track your progress with smart analytics.
+        .cardques
+          | Is Flash Learn free to use?
+          img(src="../public/images/plus-sign-stroke-rounded.svg", alt="", class="icon-ques")
+        .cardans
+          p Yes! Flash Learn offers a free plan with essential features. We also provide premium plans with advanced tools like AI-generated flashcards, collaboration features, and deeper insights into your learning progress.
+        .cardques
+          | Can I create my own flashcards?
+          img(src="../public/images/plus-sign-stroke-rounded.svg", alt="", class="icon-ques")
+        .cardans
+          p Absolutely! You can easily create, edit, and organize your own flashcards with text, images, and even audio. Customize your learning experience however you like!
+        .cardques
+          | How can I track my progress?
+          img(src="../public/images/plus-sign-stroke-rounded.svg", alt="", class="icon-ques")
+        .cardans
+          p Our built-in progress tracker shows your strengths and areas for improvement. You’ll also get personalized recommendations to help you focus on what matters most.
+        .cardques
+          | How do I get started?
+          img(src="../public/images/plus-sign-stroke-rounded.svg", alt="", class="icon-ques")
+        .cardans
+          p Getting started is simple! Just sign up for free, create or explore flashcards, and start learning today.
+    .end.hidden
+      span Ready to start learning? Enter your email to create or log-in to your account and start learning for free.
+      .endform
+        input(type="text", placeholder="Email Address")
+        button.btn-foot(onclick="scrollToSection()") Get Started&nbsp;&nbsp;>
